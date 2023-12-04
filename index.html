@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ímã-Tasks</title>
+    <link rel="stylesheet" href="src/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="src/assets/Css/index-style.css">
+    <link rel="stylesheet" href="src/bootstrap/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="src/bootstrap/js/bootstrap.bundle.js" defer></script>
+    <script src="src/assets/Js/Main/index.js" defer></script>
+    <script src="src/assets/Js/Models/Task.js" defer></script>
+    <script src="src/assets/Js/Services/taskServices.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-dark bg-dark px-2">
+        <div class="user__loggade">
+            <p>Olá, <span id="userLoggadeName"></span></p>
+        </div>
+        <div class="logout__button">
+            <button onclick="userLogout()" class="btn btn-dark">Sair</button>
+        </div>
+    </header>    
+    <!-- Main -->
+    <main class="d-flex flex-column main__container gap-5 mt-5">
+        <section class="d-flex flex-column justify-content-center align-items-center task__form">
+            <h1 class=" h1 text-center text-dark">Gerenciador de tarefas</h1>
+            <div class="container__form">
+                <form id="task__form-create" class="d-flex flex-column aling-items-center task__form">
+                    <div class="form-group task__form-item">
+                        <input type="text" class="form-control mb-3" id="taskTitle" placeholder="Tarefa" required>
+                    </div>
+                    <div class="form-group d-flex  mb-2 gap-2">
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+                            class="form-control mb-3 mr-2" id="dateStart" placeholder="Data início" required>
+                        <input type="text" onfocus="(this.type='time')" onblur="(this.type='text')"
+                            class="form-control mb-3 mr-2" id="timeStart" placeholder="Hora início" required>
+                    </div>
+                    <div class="form-group d-flex mb-3 gap-2">
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control"
+                            id="dateEnd" placeholder="Data término" required>
+                        <input type="text" onfocus="(this.type='time')" onblur="(this.type='text')" class="form-control"
+                            id="timeEnd" placeholder="Horário término" required>
+                    </div>
+                    <div class="form-group mb-3 gap-2">
+                        <textarea class="form-control" id="description" rows="3" maxlength="200" placeholder="Descrição"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary align-self-center">Criar Tarefa</button>
+                </form>
+            </div>
+        </section>
+        <section class="d-flex flex-column justify-content-center align-items-center w-100 task__list">
+            <div class="d-flex table__container table-responsive w-75">
+                <table class="table table-striped ">
+                    <thead id="list__task-head" class="fw-bold">
+                        <tr>
+                            <td class="d-flex justify-content-center ">
+                                <h3 class="h3 text-center text-dark w-75">Crie sua Primeira Tarefa</h3>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody id="list__task-body">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="container bottom-0 d-flex justify-content-between py-3 my-4 border-top">
+        <div class=" d-flex align-items-center">
+            <span class="mb-3  text-body-secondary lh-sm-1">© 2023 Renato Marcelo - Ímã Tech SharpCorders</span>
+        </div>
+        
+    </footer>
+    <!-- Modal -->
+    <div class="modal show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="exampleModalLabel"></h5>
+                </div>
+                <div id="modal__body" class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="close btn btn-secondary " data-dismiss="modal" aria-label="Close">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ímã-Editar</title>
+    <link rel="stylesheet" href="src/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="src/assets/Css/edit-task-style.css">+
+    <link rel="stylesheet" href="src/bootstrap/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="src/bootstrap/js/bootstrap.bundle.js" defer></script>
+    <script src="src/assets/Js/Main/editTask.js" defer></script>
+</head>
+<body>
+    <main class="d-flex flex-column  main__container w-100 gap-5 mt-5">
+        <section class="d-flex flex-column justify-content-center align-items-center">
+            <h1 class=" h1 text-center text-dark">Gerenciador de tarefas</h1>
+            <div class="container__form">
+                <form class="d-flex flex-column aling-items-center">
+                    <div class="form-group task__form-item">
+                        <input type="text" class="form-control mb-3" id="taskTitle" placeholder="Tarefa">
+                    </div>
+                    <div class="form-group d-flex  mb-2 gap-2">
+                        <input type="date" class="form-control mb-3 mr-2" id="dateStart" placeholder="Data início">
+                        <input type="time" class="form-control mb-3 mr-2" id="timeStart" placeholder="Hora início">
+                    </div>
+                    <div class="form-group d-flex mb-3 gap-2">
+                        <input type="date" class="form-control" id="dateEnd" placeholder="Data término">
+                        <input type="time" class="form-control" id="timeEnd" placeholder="Horário término">
+                    </div>
+                    <div class="form-group mb-3 gap-2">
+                        <textarea class="form-control" id="description" rows="3" maxlength="200"
+                            placeholder="Descrição"></textarea>
+                    </div>
+                    <div id="editiSectionButtons" class="d-flex flex-wrap justify-content-center form-group gap-2 w-100">
+                       
+                    </div>
+                </form>
+            </div>
+        </section>
+        <div id="confirmDeleteTaks" class="alert alert-danger alert-task  align-items-center fade  align-self-center " role="alert">
+            <h3 class=" h3 text-center text-dark">Deseja Realmente Excluir a Tarefa?</h3>
+            <div id="confirmDeleteButtons" class=" w-100 d-flex justify-content-around">                
+                <button data-id="1" class="btn btn-danger">Sim</button>
+                <button data-id="0" class="btn btn-secondary">Não</button>
+            </div>
+        </div>
+        <div id="alertTasksDelete" class="alert  alert-success fade alert-task alert-login align-self-center " role="alert">
+            Tarefa Removida Com sucesso
+        </div>
+        <div id="alertTaskUpdate" class="alert  alert-success fade alert-task align-self-center " role="alert">
+            Tarefa Atualizada com Sucesso.
+        </div>
+    </main>
+    <footer class="container  d-flex justify-content-between py-3 my-4 border-top">
+        <div class=" d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary lh-sm-1">© 2023 Renato Marcelo - Ímã Tech SharpCorders </span>
+        </div>
+    </footer>
+</body>
+</html>
